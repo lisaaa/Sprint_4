@@ -60,8 +60,6 @@ public class AccordionTest {
             mainPage.waitForToBeVisible();
             String actual = panel.get(i).getText();
             String expected = expectedPanelText.get(i);
-           // System.out.println("actual: " + actual);
-           // System.out.println("expected: " + expected);
          Assert.assertEquals(expected,actual);
 
                 }
