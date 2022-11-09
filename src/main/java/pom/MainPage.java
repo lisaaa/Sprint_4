@@ -1,6 +1,7 @@
 package pom;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -68,9 +69,14 @@ public class MainPage {
                 .until(ExpectedConditions.elementToBeClickable(accordingHeading));
     }
 
-    public void waitForToBeVisible(){
+    public void waitForToBeVisible(WebElement e){
         new WebDriverWait(driver, Duration.ofSeconds(25))
-               .until(ExpectedConditions.visibilityOfElementLocated(accordingPanel));
+               .until(ExpectedConditions.visibilityOf(e));
+    }
+
+    public void scrollToElement(WebElement e){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", e);
 
     }
 

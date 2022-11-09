@@ -43,7 +43,7 @@ public class OrderTest {
         this.comment = comment;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters (name = "browser = {0}, orderButtonPosition = {1},name = {2},surname = {2}")
     public static Object[][] getOrderData() {
         return new Object[][]{
                 {"chrome","up","Иван", "Иванов", "ул Елова д 34", "Красносельская","89223451234" ,"06.11.2022","сутки","черный","привезите пораньше"},
